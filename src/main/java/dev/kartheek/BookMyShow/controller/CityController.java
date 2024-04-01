@@ -3,6 +3,7 @@ package dev.kartheek.BookMyShow.controller;
 import dev.kartheek.BookMyShow.dto.CityRequestDTO;
 import dev.kartheek.BookMyShow.model.City;
 import dev.kartheek.BookMyShow.service.CityService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,6 +11,7 @@ import java.util.List;
 
 @RestController
 public class CityController {
+    @Autowired
     private CityService cityService;
     @GetMapping("/city/{name}")
     public ResponseEntity getCityByName(@PathVariable("name") String cityName){
